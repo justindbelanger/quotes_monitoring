@@ -1,0 +1,10 @@
+* Quotes Monitoring
+
+* What is this?
+It's app health monitoring and telemetry for my [[https://github.com/justindbelanger/quotes][Quotes demo app]].
+
+It uses [[https://github.com/chrissnell/crabby/][Crabby]] to ping the HTTP URL for the app;
+Crabby will stop sending events if it can't reach the app.
+
+[[https://riemann.io/][Riemann]] is used to receive the events and forward them elsewhere.
+For example, one could easily group events and forward them to Slack.
