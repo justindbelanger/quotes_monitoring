@@ -1,0 +1,27 @@
+general:
+  request-timeout: 15s
+  tags:
+     crabby-location: "Digitalocean SFO2"
+     environment: prod
+  report-internal-metrics: true
+  internal-metrics-gathering-interval: 15
+jobs:
+ - name: crabby.quotes-1
+   type: simple
+   url: http://127.0.0.1:8080/
+   interval: 10
+   tags:
+      region: us-west-2
+      isp: amazon
+
+# Storage Backends
+#
+# You will need to remove/comment-out any that you are not going to be using.
+#
+storage:
+    riemann:
+        host: 0.0.0.0
+        port: 5555
+        metric-namespace: crabby.localhost-1
+        tags:
+            - crabby-localhost-1

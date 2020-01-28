@@ -1,0 +1,9 @@
+version: "2"
+services:
+  crabby:
+    network_mode: "host"
+    image: chrissnell/crabby
+    environment:
+    - CRABBY_CONFIG=/config/config.yaml
+    volumes:
+     - ./config:/config
